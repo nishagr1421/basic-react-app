@@ -1,22 +1,23 @@
 import "./product.css";
+import Price from "./price.jsx";
 
-function Product({title, price, features = []}) {
-
-    const list = features.map((feature, index) => 
-        <li key={index}>{feature}</li>
-    );
-
-    let styles={backgroundColor:"red"};
-    
-
+function product({title, idx}) {
+    let oldPrice=["12,493","14,493","16,493","499"];
+    let newPrice=["11,993","12,493","12,883","399"];
+    let descrption=[
+        ["8,000 DPI","5 Programmable buttons"],
+        [ "intutive surface" ,"Designed for iPad pro"], 
+        ["designed for ipad pro","intutive surface"],
+        ["wireless","optical orientation sensor"]
+    ];
     return (
-        <div className="product" style={styles}>
-            <h3>{title}</h3>
-            <h5>Price : {price}</h5>
-            <h5>Product Description</h5>
-            <ul>{list}</ul>
+        <div className="product" >
+           <h4>{title}</h4>
+           <p>{descrption[idx][0]}</p>
+           <p>{descrption[idx][1]}</p>
+           <Price oldPrice={oldPrice[idx]} newPrice={newPrice[idx]} />
         </div>
     );
 }
 
-export default Product;
+export default product;

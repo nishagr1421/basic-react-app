@@ -1,12 +1,11 @@
 import "./App.css"
 import ProductTab from "./productTab.jsx";
-import MapBox from "./mapBox.jsx";
-
+import product from "./product.jsx";
 
 function App() {
   return (
   <>
-    <MapBox userName="Rahul" textColor="blue" />
+    <h2>BirthDay crazy sale | up to 50% off | shop now</h2>
     <ProductTab />
   </>
   );
